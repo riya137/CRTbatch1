@@ -2,9 +2,10 @@
 # before running this suite.
 
 *** Settings ***
-Resource                      ../resources/common.robot
-Suite Setup                   Setup Browser
-Suite Teardown                End suite
+Resource                        ../../resource/common.resource
+Suite Setup                     Setup Browser
+Suite Teardown                  End Suite
+
 
 *** Variables ***
 ${day}=   Friday
