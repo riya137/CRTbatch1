@@ -8,74 +8,10 @@ Suite Setup                     Setup Browser
 Suite Teardown                  End Suite
 
 
-*** Variables ***
-${day}=   Friday
-@{nameOfMonths}=    January Feb Mar Apr
-@{nameOfDays}=      Mon Tue Wed Thu Fri Sat Sun 
-&{userInfo}=    Name=Riya    City=Indore    State=Madhya Pradesh    Area=Cloth Market
-
-
 *** Test Cases ***
-PrintingDayName
-    [Setup]        Log To Console     this is testcase level setup side           #this is override the global level setting specific to test case
-    [Teardown]     Log To Console     this is from test case level teardown side  #this is override the global level setting specific to test case
-    Log To Console                    This is PrintingDayName TC
-
-PrintingDateName
-    [Setup]        NONE           #now setup is none, so it is override with global setting test setup
-    [Teardown]     NONE           #now setup is none, so it is override with global setting test teardown
-    Log To Console                    This is PrintingDateName TC
-
-Variable n List Learning
-    ${nameInTestCase}         Set Variable  Riya
-    Log To Console            Name of the User defined in Test Case - ${nameInTestCase}
-    
-    ${weekDays}               Create List    Monday    Tuesday    Wednesday    Thursday    Friday    Saturday Sunday
-    Log To Console            ${weekDays}[0]
-
-    Log To Console            ${day}
-    Log To Console            @{nameOfMonths}
-
-    Lists Should Be Equal     ${nameOfMonths}  ${nameOfDays}
-    List Should Not Contain Value              ${nameOfMonths}  June
-
-    ${UserName}=             Get Dictionary Keys  ${userInfo} Name
-    Log To Console           ${UserName}
-
-Exercise 4 login with MFA   
-    Appstate                  Home
-    Login
-    VerifyText                Home
-    LogScreenshot
-
-Exercise 5 Navigate and Verify App
-    LaunchApp                 Sales
-    ClickText                 Accounts
-    VerifyPageHeader          Accounts
-    VerifyText                New    
-    ClickText                 Contacts
-    VerifyPageHeader          Contacts
-    VerifyText                New
-
-Exercise 6 Create Contact And Verify
-   LaunchApp                   Sales
-   ClickText                   Contacts
-   ClickText                   New
-   UseModal
-   TypeText                    First Name    CRT2
-   TypeText                    Last Name     Demo User
-   PickList                    Salutation    Mr.
-   TypeText                    Email         crt2.demo@test.com
-   ClickText                   Save  2
-   ClickText                   Details
-   VerifyField                 First Name    CRT2
-   VerifyField                 Last Name     Demo User
-   VerifyField                 Email         crt2.demo@test.com
-   VerifyText                  CRT2 Demo User
-
 Entering A Lead
     Appstate                  Home
-    LeadCreation
+    LeadCreation_page
 
 Converting A Lead To Opportunity-Account-Contact
     [tags]                    Lead
