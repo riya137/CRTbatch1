@@ -14,13 +14,6 @@ ${home_url}               ${login_url}/lightning/page/home
 
      # Salesforce instance. NOTE: Should be overwritten in CRT variables
 
-Home
-    [Documentation]       Example appstarte: Navigate to homepage, login if needed
-    GoTo                  ${home_url}
-    ${login_status} =     IsText                      To access this page, you have to log in to Salesforce.    2
-    Run Keyword If        ${login_status}             Login
-    ClickText             Home
-    VerifyTitle           Home | Salesforce
 
 
 *** Keywords ***
