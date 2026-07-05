@@ -5,6 +5,7 @@ Library                   QForce
 Library                   String
 Library                   DateTime
 Library                   Collections
+Library                   FakerLibrary
 
 
 *** Variables ***
@@ -30,8 +31,8 @@ LeadCreation_page
     UseModal                  On                          # Only find fields from open modal dialog
 
     Picklist                  Salutation                  Ms.
-    TypeText                  First Name                  Tina1
-    TypeText                  Last Name                   Smith1
+    TypeText                  First Name                  Riya
+    TypeText                  Last Name                   Neema
     Picklist                  Lead Status                 Open - Not Contacted
     # generate random phone number, just as an example
     # NOTE: initialization of random number generator is done on suite setup
