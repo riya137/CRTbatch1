@@ -121,8 +121,10 @@ DeleteLeads
     ClickText             Leads                    partial_match=False
 
 LeadCreation
+    #author               Riya Neema
+    [Documentation]        It is to create the lead in salesforce
 
-        [tags]                    Lead
+    [tags]                    Lead
     #Appstate                  Home
     Login
     VerifyText                Home
