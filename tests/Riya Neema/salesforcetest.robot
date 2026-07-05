@@ -3,6 +3,7 @@
 
 *** Settings ***
 Resource                        ../../resource/common.resource
+Resource                        ../../resource/lead.resource
 Suite Setup                     Setup Browser
 Suite Teardown                  End Suite
 
