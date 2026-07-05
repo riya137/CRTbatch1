@@ -73,6 +73,7 @@ Exercise 6 Create Contact And Verify
    VerifyText                  CRT2 Demo User
 
 Entering A Lead
+    Appstate                  Home
     LeadCreation
 
 Converting A Lead To Opportunity-Account-Contact
