@@ -5,6 +5,7 @@ Library                   QForce
 Library                   String
 Library                   DateTime
 Library                   Collections
+Library                   FakerLibrary
 
 
 *** Variables ***
@@ -19,7 +20,11 @@ ${home_url}               ${login_url}/lightning/page/home
 LeadCreation
     #author               Riya Neema
     [Documentation]        It is to create the lead in salesforce
-       
+    
+    ${fname}=              FakerLibrary.First Name Female
+    ${lname}=              FakerLibrary.Last Name Female 
+    Set Suite Variable     ${fname} 
+    Set Suite Variable     ${lname}     
     VerifyText                Home
     LaunchApp                 Sales
     ClickText                 Leads
@@ -31,7 +36,7 @@ LeadCreation
     Picklist                  Salutation                  Ms.
     TypeText                  First Name                  Tina
     TypeText                  Last Name                   Smith
-    #Picklist                  Lead Status                 New
+    Picklist                  Lead Status                 Open - Not Contacted
     # generate random phone number, just as an example
     # NOTE: initialization of random number generator is done on suite setup
     ${rand_phone}=            Generate Random String      14                          [NUMBERS]
@@ -43,7 +48,7 @@ LeadCreation
     TypeText                  Email                       tina.smith@gmail.com        Rating
     TypeText                  Website                     https://www.growmore.com/
 
-    #Picklist                  Lead Source                 Partner
+    Picklist                  Lead Source                 Web
     ClickText                 Save                        partial_match=False
     UseModal                  Off
     Sleep                     1
