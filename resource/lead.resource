@@ -5,7 +5,6 @@ Library                   QForce
 Library                   String
 Library                   DateTime
 Library                   Collections
-Library                   FakerLibrary
 
 
 *** Variables ***
@@ -21,10 +20,6 @@ LeadCreation
     #author               Riya Neema
     [Documentation]        It is to create the lead in salesforce
     
-    ${fname}=              FakerLibrary.First Name Female
-    ${lname}=              FakerLibrary.Last Name Female 
-    Set Suite Variable     ${fname} 
-    Set Suite Variable     ${lname}     
     VerifyText                Home
     LaunchApp                 Sales
     ClickText                 Leads
@@ -34,8 +29,8 @@ LeadCreation
     UseModal                  On                          # Only find fields from open modal dialog
 
     Picklist                  Salutation                  Ms.
-    TypeText                  First Name                  Tina
-    TypeText                  Last Name                   Smith
+    TypeText                  First Name                  Tina1
+    TypeText                  Last Name                   Smith1
     Picklist                  Lead Status                 Open - Not Contacted
     # generate random phone number, just as an example
     # NOTE: initialization of random number generator is done on suite setup
