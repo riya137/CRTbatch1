@@ -17,9 +17,9 @@ ${home_url}               ${login_url}/lightning/page/home
 
 
 *** Keywords ***
-LeadCreation
+LeadCreation_page
     #author               Riya Neema
-    [Documentation]        It is to create the lead in salesforce
+    [Documentation]        It is to create the lead in salesforce from lead.resource
     
     VerifyText                Home
     LaunchApp                 Sales
