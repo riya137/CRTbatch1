@@ -10,10 +10,10 @@ Library                   Collections
 *** Variables ***
 # IMPORTANT: Please read the readme.txt to understand needed variables and how to handle them!!
 ${BROWSER}                chrome
-${username}               riya.neema.69545cb5c60e@agentforce.com
-${login_url}              https://orgfarm-641ad5586e-dev-ed.develop.lightning.force.com/            # Salesforce instance. NOTE: Should be overwritten in CRT variables
-${home_url}               ${login_url}/lightning/page/home
-${secret}                 GVMIYSDDDS6WHMKATM7Z5PKYFTRYE57K
+#${username}               riya.neema.69545cb5c60e@agentforce.com
+#${login_url}              https://orgfarm-641ad5586e-dev-ed.develop.lightning.force.com/            # Salesforce instance. NOTE: Should be overwritten in CRT variables
+#${home_url}               ${login_url}/lightning/page/home
+#${secret}                 GVMIYSDDDS6WHMKATM7Z5PKYFTRYE57K
 
 *** Keywords ***
 Setup Browser
