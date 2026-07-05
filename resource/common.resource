@@ -10,6 +10,8 @@ Library                   Collections
 *** Variables ***
 # IMPORTANT: Please read the readme.txt to understand needed variables and how to handle them!!
 ${BROWSER}                chrome
+${home_url}               ${login_url}/lightning/page/home
+
      # Salesforce instance. NOTE: Should be overwritten in CRT variables
 
 
@@ -123,10 +125,7 @@ DeleteLeads
 LeadCreation
     #author               Riya Neema
     [Documentation]        It is to create the lead in salesforce
-
-    [tags]                    Lead
-    #Appstate                  Home
-    Login
+       
     VerifyText                Home
     LaunchApp                 Sales
     ClickText                 Leads
@@ -138,7 +137,7 @@ LeadCreation
     Picklist                  Salutation                  Ms.
     TypeText                  First Name                  Tina
     TypeText                  Last Name                   Smith
-    Picklist                  Lead Status                 New
+    #Picklist                  Lead Status                 New
     # generate random phone number, just as an example
     # NOTE: initialization of random number generator is done on suite setup
     ${rand_phone}=            Generate Random String      14                          [NUMBERS]
@@ -150,7 +149,7 @@ LeadCreation
     TypeText                  Email                       tina.smith@gmail.com        Rating
     TypeText                  Website                     https://www.growmore.com/
 
-    Picklist                  Lead Source                 Partner
+    #Picklist                  Lead Source                 Partner
     ClickText                 Save                        partial_match=False
     UseModal                  Off
     Sleep                     1
